@@ -116,3 +116,93 @@ header{
     padding: 8px 72px 7px 73px;
     background-color: #BDAE82;
 }
+
+.skills{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h2.header{
+    position: relative;
+    font-family: Merriweather;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: #BDAE82;
+    margin-bottom: 60px;
+}
+
+h2.header::before{
+    display: inline-block;
+    position: absolute;
+    top: -98px;
+    margin-left: -160px;    
+    content: '';
+    height: 274px;
+    width: 1.5px;
+    transform: rotate(90deg);
+    border: 1px solid #BDAE82;
+    background-color: #BDAE82;
+}
+
+h2.header::after{
+    display: inline-block;
+    position: absolute;
+    top: -98px;
+    margin-left: 160px;   
+    content: '';
+    height: 274px;
+    width: 1.5px;
+    transform: rotate(90deg);
+    border: 1px solid #BDAE82;
+    background-color: #BDAE82;
+}
+
+.skills__items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__item{
+    width: 320px;
+    text-align: center;
+}
+
+.skills__item img{
+    margin-bottom: 50px;
+}
+
+.skills__item-header{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.skills__item-description{
+    width: 280px;
+    font-size: 18px;
+    line-height: 36px;
+    margin-left: 20px;
+}
+
+.seasons__btns{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 64%;
+}
+
+.season__btn{
+    font-size: 20px;
+    line-height: 40px;
+    color: #BDAE82;
+    padding: 8px 79px 7px;
+    border: 2px solid #BDAE82;
+}
+
+.active__season{
+    color: black;
+    background-color: #BDAE82;
+}
