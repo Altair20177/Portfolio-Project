@@ -8,15 +8,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Merriweather&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Portfolio</title>
 </head>
 <body>
-    <div class="alexa__rise">
-        <div class="container">
+    <aside>
+        <div class="cross"></div>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#video">Video</a>
+        <a href="#price">Price</a>
+        <a href="#contacts">Contacts</a>
+    </aside>
+    <div class="container">
+        <div class="alexa__rise">
             <header>
-                <div class="header__logo">
-                 
-                </div>
+                <div class="header__logo"></div>
                 <nav class="header__navbar">
                     <ul class="header__navbar-nav">
                         <li><a href="#skills">Skills</a></li>
@@ -29,6 +35,7 @@
                         <span class="en-language active__language">en</span> /
                         <span class="ru-language">ru</span>
                     </div>
+                    <div class="burger"></div>
                 </nav>
             </header>
             <section class="hero">
@@ -37,9 +44,6 @@
                 <button class="hero__description-btn">Hire me</button>
             </section>
         </div> 
-    </div>
-
-    <div class="wrapper">
         <main>
             <section id="skills" class="skills">
                 <h2 class="header">Skills</h2>
@@ -59,7 +63,7 @@
                         <div class="skills__item-header">Retouch</div>
                         <div class="skills__item-description">I strive to make photography surpass reality</div>
                     </div>
-                    <div class="skills__item">
+                    <div class="skills__item skills__item-last">
                         <img src="icons/mic_skills.svg" alt="">
                         <div class="skills__item-header">Audio</div>
                         <div class="skills__item-description">Professional sounds recording for video, advertising, portfolio</div>
@@ -69,10 +73,10 @@
             <section id="portfolio" class="portfolio">
                 <h2 class="header">Portfolio</h2>
                 <div class="seasons__btns">
-                    <button class="season__btn">Winter</button>
-                    <button class="season__btn">Spring</button>
+                    <button class="season__btn season__btn-first">Winter</button>
+                    <button class="season__btn season__btn-second">Spring</button>
                     <button class="season__btn">Summer</button>
-                    <button class="season__btn active__season season__btn-last">Autumn</button>
+                    <button class="season__btn active__season">Autumn</button>
                 </div>
                 <div class="portfolio__images">
                     <div class="portfolio__images-first-row">
@@ -135,41 +139,41 @@
                     </div>
                 </div>
             </section>
+            <section id="contacts" class="contact__me">
+                <div class="contact__me-all">
+                    <form class="contact__me-form">
+                        <h2 class="contact__me-header">Contact me</h2>
+                        <input placeholder="E-mail" type="email" class="e-mail">
+                        <input placeholder="Phone" type="number" class="phone">
+                        <textarea placeholder="Message" class="message"></textarea>
+                        <button class="contact__me-btn">Send message</button>
+                    </form>
+                </div>
+            </section>
         </main>
+        <footer>
+            <div class="year__github">
+                <img src="icons/copyright.svg" alt="">
+                <p class="year">2022</p>
+                <a href="#" class="github">github</a>
+            </div>
+            <div class="authors">Rolling Scopes School</div>
+            <ul class="social-links">
+                <li><a href="#">
+                    <div class="social-links-inst"></div>
+                </a></li>
+                <li><a href="#">
+                    <div class="social-links-facebook"></div>
+                </a></li>
+                <li><a href="#">
+                    <div class="social-links-twitter"></div>
+                </a></li>
+                <li><a href="#">
+                    <div class="social-links-pinterest"></div>
+                </a></li>
+            </ul>
+        </footer>
     </div>
-    <section id="contacts" class="contact__me">
-        <div class="contact__me-all">
-            <form class="contact__me-form">
-                <h2 class="contact__me-header">Contact me</h2>
-                <input placeholder="E-mail" type="email" class="e-mail">
-                <input placeholder="Phone" type="number" class="phone">
-                <textarea placeholder="Message" class="message"></textarea>
-                <button class="contact__me-btn">Send message</button>
-            </form>
-        </div>
-    </section>
-    <footer>
-        <div class="year__github">
-            <img src="icons/copyright.svg" alt="">
-            <p class="year">2022</p>
-            <a href="#" class="github">github</a>
-        </div>
-        <div class="authors">Rolling Scopes School</div>
-        <ul class="social-links">
-            <li><a href="#">
-                <div class="social-links-inst"></div>
-            </a></li>
-            <li><a href="#">
-                <div class="social-links-facebook"></div>
-            </a></li>
-            <li><a href="#">
-                <div class="social-links-twitter"></div>
-            </a></li>
-            <li><a href="#">
-                <div class="social-links-pinterest"></div>
-            </a></li>
-        </ul>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
