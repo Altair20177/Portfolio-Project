@@ -11,6 +11,13 @@ const cross = document.querySelector('.cross');
 const sidebarsLinks = document.querySelectorAll('aside a');
 const sideMenu = document.querySelector('aside');
 
+allSeasonsButtons.onclick = event => {
+    if(event.target.classList.contains('season__btn')){
+        document.querySelectorAll('.portfolio__images img').
+        forEach((image, index) => image.src = `assets/${event.target.dataset.season}/${index + 1}.jpg`);
+    }
+}
+
 seasonsBtns.forEach(seasonBtn => {
     seasonBtn.addEventListener('click', () => {
         seasonsBtns.forEach( btn => {btn.classList.remove("active__season")});
@@ -20,31 +27,26 @@ seasonsBtns.forEach(seasonBtn => {
 
 languages.forEach(activeLang => {
     activeLang.addEventListener('click', () => {
-        languages.forEach( lang => {lang.classList.remove("active__language")});
+        languages.forEach( lang => lang.classList.remove("active__language"));
         if(!activeLang.classList.contains("active__language")) activeLang.classList.add("active__language");
     })
 });
 
 
 
-burger.onclick = () => {
-    sideMenu.classList.add('active__side-menu');
-    container.classList.add('active__side-menu');
-}
-
 function closeSidebar(){
     sideMenu.classList.remove('active__side-menu');
     container.classList.remove('active__side-menu');
 }
 
+burger.onclick = () => {
+    sideMenu.classList.add('active__side-menu');
+    container.classList.add('active__side-menu');
+}
+
 cross.onclick = closeSidebar;
 sidebarsLinks.forEach(link => link.onclick = closeSidebar);
 
+function translateSite(){
 
-allSeasonsButtons.onclick = event => {
-    if(event.target.classList.contains('season__btn')){
-        document.querySelectorAll('.portfolio__images img').
-        forEach((image, index) => image.src = `assets/${event.target.dataset.season}/${index + 1}.jpg`);
-    }
 }
-
