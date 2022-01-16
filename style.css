@@ -96,6 +96,7 @@ header{
 
 .header__navbar-language span{
     transition: 0.2s;
+    font-weight: 600;
 }
 
 .header__navbar-language span:hover{
@@ -104,6 +105,27 @@ header{
 
 .active__language{
     color: #BDAE82;
+}
+
+.theme{
+    width: 45px;
+    height: 45px;
+    margin-left: 20px;
+}
+
+.theme:hover{
+    cursor: pointer;
+}
+
+.theme__light,
+.theme__dark{
+    position: absolute;
+    transition: 0.2s;
+    top: 25px;
+}
+
+.nonactive__theme{
+    top: -100px;
 }
 
 .burger{

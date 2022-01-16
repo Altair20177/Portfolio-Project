@@ -1,5 +1,8 @@
 import i18Obj from './translate.js';
 
+const allLinks = document.querySelectorAll('footer a');
+allLinks.forEach(link => link.onclick = e => e.preventDefault());
+
 const seasonsBtns = document.querySelectorAll('.season__btn');
 const languages = document.querySelectorAll('.header__navbar-language span');
 
@@ -11,8 +14,15 @@ const cross = document.querySelector('.cross');
 const sidebarsLinks = document.querySelectorAll('aside a');
 const sideMenu = document.querySelector('aside');
 
-let activeLanguage;
+const theme = document.querySelector('.theme');
 
+theme.onclick = () => {
+    document.querySelectorAll('.theme img').forEach(activeTheme => {
+        activeTheme.classList.toggle('nonactive__theme');
+    });
+}
+
+/* ------------------------------Активная кнопка сезона и фотографии------------------------------ */
 allSeasonsButtons.onclick = event => {
     if(event.target.classList.contains('season__btn')){
         document.querySelectorAll('.portfolio__images img').
@@ -26,6 +36,10 @@ seasonsBtns.forEach(seasonBtn => {
         if(!seasonBtn.classList.contains("active__season")) seasonBtn.classList.add("active__season");
     })
 });
+/* ------------------------------Активная кнопка сезона и фотографии------------------------------ */
+
+/* ------------------------------Текущий язык------------------------------ */
+let activeLanguage;
 
 languages.forEach(activeLang => {
     activeLang.addEventListener('click', () => {
@@ -38,8 +52,14 @@ languages.forEach(activeLang => {
     })
 });
 
+function translateSite(activeLanguage){  
+    document.querySelectorAll('[data-i18n]').forEach(node => {
+        node.textContent = i18Obj[activeLanguage][node.dataset.i18n];
+    });
+}
+/* ------------------------------Текущий язык------------------------------ */
 
-
+/* ------------------------------Работа с сайдбаром------------------------------ */
 function closeSidebar(){
     sideMenu.classList.remove('active__side-menu');
     container.classList.remove('active__side-menu');
@@ -52,11 +72,4 @@ burger.onclick = () => {
 
 cross.onclick = closeSidebar;
 sidebarsLinks.forEach(link => link.onclick = closeSidebar);
-
-function translateSite(activeLanguage){  
-    document.querySelectorAll('[data-i18n]').forEach(node => {
-        let activeNode = node.dataset.i18n;
-        node.textContent = i18Obj[activeLanguage][activeNode];
-        //console.log(node.dataset.i18n); /* node.dataset.i18n.textContent = i18Obj[activeLanguage].dataset.i18n; */
-    });
-}
+/* ------------------------------Работа с сайдбаром------------------------------ */
