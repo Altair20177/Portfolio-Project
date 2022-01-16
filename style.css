@@ -50,7 +50,7 @@ html {
 }
 
 .alexa__rise{
-    background-image: url('assets/bg.png');
+    background-image: url('assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -582,6 +582,11 @@ path,
 
 svg:hover path{
     fill: #CCBA8D;
+}
+
+.light{
+    color: #000000;
+    background-color: white;
 }
 
 @media (max-width: 1000px){
