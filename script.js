@@ -1,9 +1,14 @@
+import i18Obj from './translate.js';
+
 const seasonsBtns = document.querySelectorAll('.season__btn');
 const languages = document.querySelectorAll('.header__navbar-language span');
+
+const allSeasonsButtons = document.querySelector('.seasons__btns');
 
 const burger = document.querySelector('.burger');
 const container = document.querySelector('.container');
 const cross = document.querySelector('.cross');
+const sidebarsLinks = document.querySelectorAll('aside a');
 const sideMenu = document.querySelector('aside');
 
 seasonsBtns.forEach(seasonBtn => {
@@ -27,7 +32,19 @@ burger.onclick = () => {
     container.classList.add('active__side-menu');
 }
 
-cross.onclick = () => {
+function closeSidebar(){
     sideMenu.classList.remove('active__side-menu');
     container.classList.remove('active__side-menu');
 }
+
+cross.onclick = closeSidebar;
+sidebarsLinks.forEach(link => link.onclick = closeSidebar);
+
+
+allSeasonsButtons.onclick = event => {
+    if(event.target.classList.contains('season__btn')){
+        document.querySelectorAll('.portfolio__images img').
+        forEach((image, index) => image.src = `assets/${event.target.dataset.season}/${index + 1}.jpg`);
+    }
+}
+
