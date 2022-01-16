@@ -589,6 +589,10 @@ svg:hover path{
     background-color: white;
 }
 
+.light:hover{
+    color: white;
+}
+
 @media (max-width: 1000px){
     h2.header::before,
     h2.header::after{
