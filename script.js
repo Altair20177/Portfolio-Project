@@ -11,6 +11,8 @@ const cross = document.querySelector('.cross');
 const sidebarsLinks = document.querySelectorAll('aside a');
 const sideMenu = document.querySelector('aside');
 
+let activeLanguage;
+
 allSeasonsButtons.onclick = event => {
     if(event.target.classList.contains('season__btn')){
         document.querySelectorAll('.portfolio__images img').
@@ -29,6 +31,10 @@ languages.forEach(activeLang => {
     activeLang.addEventListener('click', () => {
         languages.forEach( lang => lang.classList.remove("active__language"));
         if(!activeLang.classList.contains("active__language")) activeLang.classList.add("active__language");
+
+        if(document.querySelector('.ru-language').classList.contains('active__language')) activeLanguage = "ru";
+        else activeLanguage = "en";
+        translateSite(activeLanguage); 
     })
 });
 
@@ -47,6 +53,10 @@ burger.onclick = () => {
 cross.onclick = closeSidebar;
 sidebarsLinks.forEach(link => link.onclick = closeSidebar);
 
-function translateSite(){
-
+function translateSite(activeLanguage){  
+    document.querySelectorAll('[data-i18n]').forEach(node => {
+        let activeNode = node.dataset.i18n;
+        node.textContent = i18Obj[activeLanguage][activeNode];
+        //console.log(node.dataset.i18n); /* node.dataset.i18n.textContent = i18Obj[activeLanguage].dataset.i18n; */
+    });
 }
