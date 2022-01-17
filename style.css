@@ -33,19 +33,17 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /* -------------------------------------------------- */
 
-/* 'Merriweather', serif */
-
 body{
     background-color: black;
     color: white;
     font-family: 'Inter', sans-serif;
+    transition: 0.2s;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-.wrapper,
 .container{
     max-width: 1440px;
     padding: 0 20px;
@@ -53,12 +51,13 @@ html {
 }
 
 .alexa__rise{
-    background-image: url('assets/bg.png');
+    background-image: url('assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     margin: 0 -20px;
     padding: 0 20px;
+    transition: 0.2s;
 }
 
 header,
@@ -99,6 +98,7 @@ header{
 
 .header__navbar-language span{
     transition: 0.2s;
+    font-weight: 600;
 }
 
 .header__navbar-language span:hover{
@@ -107,6 +107,27 @@ header{
 
 .active__language{
     color: #BDAE82;
+}
+
+.theme{
+    width: 45px;
+    height: 45px;
+    margin-left: 20px;
+}
+
+.theme:hover{
+    cursor: pointer;
+}
+
+.theme__light,
+.theme__dark{
+    position: absolute;
+    transition: 0.2s;
+    top: 25px;
+}
+
+.nonactive__theme{
+    top: -50px;
 }
 
 .burger{
@@ -188,6 +209,7 @@ aside a{
     font-family: 'Merriweather', serif;
     font-weight: bold;
     font-size: 60px;
+    transition: 0.2s;
     line-height: 120px;
 }
 
@@ -198,6 +220,7 @@ aside a{
     font-size: 20px;
     line-height: 40px;
     width: 470px;
+    transition: 0.2s;
     margin-bottom: 25px;
 }
 
@@ -353,9 +376,6 @@ h2.header::after{
 
 .video__player-play{
     position: absolute;
-    width: 130px;
-    height: 130px;
-    background-image: url('icons/Play_hover.svg');
 }
 
 .price__cards{
@@ -409,6 +429,7 @@ h2.header::after{
     background-position: center;
     background-size: cover;
     margin: 0 -20px;
+    transition: 0.2s;
 }
 
 input::-webkit-outer-spin-button,
@@ -504,7 +525,7 @@ footer,
     margin-left: 0;
 }
 
-.header__logo,
+/* .header__logo,
 .video__player-play,
 .social-links-inst,
 .social-links-facebook,
@@ -544,14 +565,9 @@ footer,
     width: 32px;
     height: 32px;
     background-image: url('icons/pinterest.svg');
-}
+} */
 
-.header__logo:hover,
-.video__player-play:hover,
-.social-links-pinterest:hover,
-.social-links-inst:hover,
-.social-links-facebook:hover,
-.social-links-twitter:hover{
+.video__player-play:hover{
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
         contrast(87%);
 }
@@ -560,6 +576,100 @@ footer,
 .skills__items-second{
     display: flex;
 }
+
+path,
+.video__player-play{
+    transition: 0.2s;
+}
+
+svg:hover path{
+    fill: #CCBA8D;
+}
+
+/* Светлая тема */
+body.light{
+    background-color: white;
+    transition: 0.2s;
+}
+
+.active__side-menu.light,
+.light.hero button,
+.light .contact__me button{
+    color: #000000;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.light a,
+.light span,
+.light p,
+.light .price__card-description,
+.light .authors,
+.light h2{
+    transition: 0.2s;
+    color: #000000;
+}
+
+aside.light .cross::before,
+aside.light .cross::after,
+.light.burger::before,
+.light.burger::after,
+.light h2.header::after,
+.light h2.header::before{
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.light.burger{
+    background-color: black;
+}
+
+.light:hover,
+.light span.active__language,
+.light a:hover{
+    color: white;
+}
+
+path.light,
+.light path{
+    transition: 0.2s;
+    fill: black;
+}
+
+.light .season__btn{
+    color: black;
+    background-color: #BDAE82;
+}
+
+.light .season__btn.active__season,
+.light .season__btn:hover{
+    color: #BDAE82;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.light .price__card-btn:hover,
+.light .hero__description-btn:hover,
+.light .contact__me-btn:hover{
+    color: #BDAE82;
+    background-color: black;
+}
+
+.light .gold{
+    color: #BDAE82;
+}
+
+.light .e-mail,
+.light .phone,
+.light .message{
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.light input::-webkit-input-placeholder,
+.light textarea::-webkit-input-placeholder{
+     color: black;
+}
+/* Светлая тема */
 
 @media (max-width: 1000px){
     h2.header::before,
@@ -622,8 +732,8 @@ footer,
     .hero__description-about{
         font-size: 20px;
         line-height: 24px;
-        width: 390px;
         margin-bottom: 60px;
+        width: 250px;
     }
     h2.header{
         font-size: 32px;
@@ -649,7 +759,7 @@ footer,
         font-size: 18px;
         line-height: 22px;
     }
-    .skills__item-last{
+    .skills__item{
         margin-bottom: 80px;
     }
     .seasons__btns{
@@ -727,5 +837,67 @@ footer,
     
     .social-links li:first-child{
         margin-left: 0;
+    }
+    .skills__item-description{
+        margin-left: 0;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px){
+    .alexa__rise{
+        padding: 0 10px;
+    }
+    .seasons__btns{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .video__player img{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .video{
+        margin: 0 auto;
+        width: 100%;
+    }
+    .skills__item-last{
+        margin-bottom: 0;
+    }
+    .season__btn{
+        margin-bottom: 10px;
+    }
+    .portfolio__images-first-row, .portfolio__images-second-row{
+        width: 100%;
+    }
+    img.portfolio__images-photo{
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .contact__me-form{
+        width: 280px;
+    }
+    .price__card{
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .contact__me-all{
+        margin-right: 0;
+    }
+    h2.header::before{
+        top: -5px;
+        height: 50px;
+        margin-left: -40px; 
+    }
+    h2.header::after{
+        top: -5px;
+        height: 50px;
+        margin-left: 40px; 
+    }
+    .price__cards{
+        width: 90%;
     }
 }
