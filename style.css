@@ -37,6 +37,7 @@ body{
     background-color: black;
     color: white;
     font-family: 'Inter', sans-serif;
+    transition: 0.2s;
 }
 
 html {
@@ -56,6 +57,7 @@ html {
     background-position: center;
     margin: 0 -20px;
     padding: 0 20px;
+    transition: 0.2s;
 }
 
 header,
@@ -207,6 +209,7 @@ aside a{
     font-family: 'Merriweather', serif;
     font-weight: bold;
     font-size: 60px;
+    transition: 0.2s;
     line-height: 120px;
 }
 
@@ -217,6 +220,7 @@ aside a{
     font-size: 20px;
     line-height: 40px;
     width: 470px;
+    transition: 0.2s;
     margin-bottom: 25px;
 }
 
@@ -428,6 +432,7 @@ h2.header::after{
     background-position: center;
     background-size: cover;
     margin: 0 -20px;
+    transition: 0.2s;
 }
 
 input::-webkit-outer-spin-button,
@@ -584,14 +589,90 @@ svg:hover path{
     fill: #CCBA8D;
 }
 
-.light{
-    color: #000000;
+/* Светлая тема */
+body.light{
     background-color: white;
+    transition: 0.2s;
 }
 
-.light:hover{
+.active__side-menu.light,
+.light.hero button,
+.light .contact__me button{
+    color: #000000;
+    background-color: white;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.light a,
+.light span,
+.light p,
+.light .price__card-description,
+.light .authors,
+.light h2{
+    transition: 0.2s;
+    color: #000000;
+}
+
+aside.light .cross::before,
+aside.light .cross::after,
+.light.burger::before,
+.light.burger::after,
+.light h2.header::after,
+.light h2.header::before{
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.light.burger{
+    background-color: black;
+}
+
+.light:hover,
+.light span.active__language,
+.light a:hover{
     color: white;
 }
+
+path.light,
+.light path{
+    transition: 0.2s;
+    fill: black;
+}
+
+.light .season__btn{
+    color: black;
+    background-color: #BDAE82;
+}
+
+.light .season__btn.active__season,
+.light .season__btn:hover{
+    color: #BDAE82;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.light .price__card-btn:hover,
+.light .hero__description-btn:hover,
+.light .contact__me-btn:hover{
+    color: #BDAE82;
+    background-color: black;
+}
+
+.light .gold{
+    color: #BDAE82;
+}
+
+.light .e-mail,
+.light .phone,
+.light .message{
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+}
+
+.light input::-webkit-input-placeholder,
+.light textarea::-webkit-input-placeholder{
+     color: black;
+}
+/* Светлая тема */
 
 @media (max-width: 1000px){
     h2.header::before,

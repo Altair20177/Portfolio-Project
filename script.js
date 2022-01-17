@@ -2,6 +2,7 @@ import i18Obj from './translate.js';
 
 const allLinks = document.querySelectorAll('footer a');
 allLinks.forEach(link => link.onclick = e => e.preventDefault());
+document.querySelector('.contact__me-btn').onclick = e => e.preventDefault()
 
 const seasonsBtns = document.querySelectorAll('.season__btn');
 const languages = document.querySelectorAll('.header__navbar-language span');
@@ -16,11 +17,36 @@ const sideMenu = document.querySelector('aside');
 
 const theme = document.querySelector('.theme');
 
+
+
+/* ------------------------------Изменение темы------------------------------ */
+let activeTheme;
+
 theme.onclick = () => {
-    document.querySelectorAll('.theme img').forEach(activeTheme => {
-        activeTheme.classList.toggle('nonactive__theme');
+    document.querySelectorAll('.theme img').forEach(node => {
+        node.classList.toggle('nonactive__theme');
+
+        if(document.querySelector('.theme__light').classList.contains('nonactive__theme')) activeTheme = "dark";
+        else activeTheme = "light";
+        changeTheme(activeTheme);
     });
 }
+
+function changeTheme(activeTheme){
+    document.querySelectorAll('[data-theme]').forEach(node => {
+        if(activeTheme === "light") {
+            node.classList.add('light');
+            document.querySelector('.alexa__rise').style.backgroundImage = "url('assets/bg-light.jpg')";
+            document.querySelector('.contact__me').style.backgroundImage = "url('assets/contacts-light.jpg')";
+        }
+        else {
+            node.classList.remove('light');
+            document.querySelector('.alexa__rise').style.backgroundImage = "url('assets/bg.jpg')";
+            document.querySelector('.contact__me').style.backgroundImage = "url('assets/contacts.jpg')";
+        }
+    })
+}
+/* ------------------------------Изменение темы------------------------------ */
 
 /* ------------------------------Активная кнопка сезона и фотографии------------------------------ */
 allSeasonsButtons.onclick = event => {
