@@ -1,9 +1,5 @@
 import i18Obj from './translate.js';
 
-const allLinks = document.querySelectorAll('footer a');
-allLinks.forEach(link => link.onclick = e => e.preventDefault());
-document.querySelector('.contact__me-btn').onclick = e => e.preventDefault()
-
 const seasonsBtns = document.querySelectorAll('.season__btn');
 const languages = document.querySelectorAll('.header__navbar-language span');
 
@@ -17,13 +13,17 @@ const sideMenu = document.querySelector('aside');
 
 const theme = document.querySelector('.theme');
 
+/* ------------------------------Отмена поведения по умолчанию у ссылок и кнопки отправки формы------------------------------ */
+document.querySelectorAll('footer a').forEach(link => link.onclick = e => e.preventDefault());
 
+document.querySelector('.contact__me-btn').onclick = e => e.preventDefault()
+/* ------------------------------Отмена поведения по умолчанию у ссылок и кнопки отправки формы------------------------------ */
 
 /* ------------------------------Изменение темы------------------------------ */
 let activeTheme;
 
 theme.onclick = () => {
-    document.querySelectorAll('.theme img').forEach(node => {
+    document.querySelectorAll('.theme svg').forEach(node => {
         node.classList.toggle('nonactive__theme');
 
         if(document.querySelector('.theme__light').classList.contains('nonactive__theme')) activeTheme = "dark";
