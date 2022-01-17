@@ -376,9 +376,6 @@ h2.header::after{
 
 .video__player-play{
     position: absolute;
-    width: 130px;
-    height: 130px;
-    background-image: url('icons/Play_hover.svg');
 }
 
 .price__cards{
@@ -735,8 +732,8 @@ path.light,
     .hero__description-about{
         font-size: 20px;
         line-height: 24px;
-        width: 390px;
         margin-bottom: 60px;
+        width: 250px;
     }
     h2.header{
         font-size: 32px;
@@ -762,7 +759,7 @@ path.light,
         font-size: 18px;
         line-height: 22px;
     }
-    .skills__item-last{
+    .skills__item{
         margin-bottom: 80px;
     }
     .seasons__btns{
@@ -840,5 +837,67 @@ path.light,
     
     .social-links li:first-child{
         margin-left: 0;
+    }
+    .skills__item-description{
+        margin-left: 0;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px){
+    .alexa__rise{
+        padding: 0 10px;
+    }
+    .seasons__btns{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .video__player img{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .video{
+        margin: 0 auto;
+        width: 100%;
+    }
+    .skills__item-last{
+        margin-bottom: 0;
+    }
+    .season__btn{
+        margin-bottom: 10px;
+    }
+    .portfolio__images-first-row, .portfolio__images-second-row{
+        width: 100%;
+    }
+    img.portfolio__images-photo{
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .contact__me-form{
+        width: 280px;
+    }
+    .price__card{
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .contact__me-all{
+        margin-right: 0;
+    }
+    h2.header::before{
+        top: -5px;
+        height: 50px;
+        margin-left: -40px; 
+    }
+    h2.header::after{
+        top: -5px;
+        height: 50px;
+        margin-left: 40px; 
+    }
+    .price__cards{
+        width: 90%;
     }
 }
